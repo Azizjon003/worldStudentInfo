@@ -7,10 +7,17 @@ const {
   deleteData,
 } = require("./handlerController");
 const getAllRegion = (req, res) => {
-  getall(req, res, Region);
+  getall(req, res, Region, {
+    path: "countryId",
+    select: "name -_id",
+  });
 };
 const getOneRegion = (req, res) => {
-  getOne(req, res, Region);
+  getOne(req, res, Region),
+    {
+      path: "countryId",
+      select: "name -_id",
+    };
 };
 const addRegion = (req, res) => {
   addData(req, res, Region);

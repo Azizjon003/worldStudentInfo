@@ -9,6 +9,6 @@ const regionSchema = new mongoose.Schema({
     ref: "countries",
   },
 });
-// countrySchema.virtual("districts", {});
+
 module.exports = mongoose.model("regions", regionSchema);
 //#endregion

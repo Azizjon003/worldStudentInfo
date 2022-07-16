@@ -1,5 +1,11 @@
 const getall = async (req, res, Model, options) => {
-  const data = await Model.find().populate();
+  let data;
+  console.log(options);
+  if (options) {
+    data = await Model.find().populate(options);
+  } else {
+    data = await Model.find();
+  }
   res.status(200).json({
     status: "success",
     results: data.length,
@@ -7,13 +13,16 @@ const getall = async (req, res, Model, options) => {
   });
 };
 
-const getOne = async (req, res, Model) => {
+const getOne = async (req, res, Model, options) => {
+  let data;
   const id = req.params.id;
-  const data = await Model.findById(id);
-
+  if (options) {
+    data = await Model.findById(id).populate(options);
+  } else {
+    data = await Model.findById(id);
+  }
   res.status(200).json({
     status: "success",
-    token,
     data: data,
   });
 };
