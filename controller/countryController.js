@@ -6,6 +6,7 @@ const {
   updateData,
   deleteData,
 } = require("./handlerController");
+
 const getAllCountry = (req, res) => {
   getall(req, res, Country);
 };

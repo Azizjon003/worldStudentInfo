@@ -13,6 +13,7 @@ const getOne = async (req, res, Model) => {
 
   res.status(200).json({
     status: "success",
+    token,
     data: data,
   });
 };
