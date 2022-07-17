@@ -17,7 +17,7 @@ const getOne = async (req, res, Model, options) => {
   let data;
   const id = req.params.id;
   if (options) {
-    data = await Model.findById(id).populate(options);
+    data = await Model.findById(id).populate(options).select("-__v -id");
   } else {
     data = await Model.findById(id);
   }

@@ -7,10 +7,16 @@ const {
   deleteData,
 } = require("./handlerController");
 const getAllDistrict = (req, res) => {
-  getall(req, res, District);
+  getall(req, res, District, {
+    path: "regionId",
+    select: "name",
+  });
 };
 const getOneDistrict = (req, res) => {
-  getOne(req, res, District);
+  getOne(req, res, District, {
+    path: "regionId",
+    select: "name -_id",
+  });
 };
 const addDistrict = (req, res) => {
   addData(req, res, District);

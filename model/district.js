@@ -10,5 +10,4 @@ const districtSchema = new mongoose.Schema({
     ref: "regions",
   },
 });
-
 module.exports = mongoose.model("districts", districtSchema);

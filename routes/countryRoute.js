@@ -6,4 +6,5 @@ route
   .get(country.getOneCountry)
   .patch(country.updateCountry)
   .delete(country.deleteCountry);
+
 module.exports = route;

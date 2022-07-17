@@ -7,4 +7,5 @@ route
   .patch(district.updateDistrict)
   .delete(district.deleteDistrict);
 
+// route.route("/country")
 module.exports = route;
